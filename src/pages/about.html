@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to the About page */
+        .about-section {
+            padding: 150px 0 80px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: grid;
+        }
+        
+        .info-item strong {
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        .download-cv {
+            margin-top: 30px;
+        }
+        
+        .skills-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .skill-bars {
+            margin-top: 50px;
+        }
+        
+        .skill-bar {
+            margin-bottom: 30px;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        .education-experience {
+            padding: 80px 0;
+        }
+        
+        .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-color);
+            left: 0;
+            transform: translateX(7px);
+        }
+        
+        .timeline-item {
+            padding-left: 45px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            left: 0;
+            top: 5px;
+        }
+        
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item .year {
+            display: inline-block;
+            padding: 2px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item h4 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 991px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-item {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../../index.html">My Portfolio</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="../assets/images/profile.jpg" alt="About Me">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm <strong>Hafizh</strong>, i am an active student with a strong interest in technology, artificial intelligence, blockchain, and digital finance. I have experience managing school projects, leading the programming division in extracurricular activities, and building digital solutions from scratch with a collaborative approach and problem-solving skills. Currently, I am participating in the Microsoft AI training program with Dicoding, while delving into computer vision and developing microcontrollers based on ESP32. With a visual-auditory learning style and analytical thinking skills as an INTP, I am accustomed to self-learning, creating learning roadmaps, and quickly adapting to new technologies.</p>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <strong>Name:</strong> <span>Hafizh Nabhan Robbani</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Email:</strong> <span>hafizhnabhan@protonmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Phone:</strong> <span>+62 821-2615-4790</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Location:</strong> <span>Bandung, Indonesia</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Freelance:</strong> <span>Not really</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Languages:</strong> <span>English, Bahasa Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="download-cv">
+                        <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Belum punya CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Skills (place holder)</h2>
+                <p>Here's a comprehensive list of my professional skills and expertise</p>
+            </div>
+            <div class="skill-bars">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>HTML/CSS</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>React</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>UI/UX Design</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Node.js</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Python</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section class="education-experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education & Experience</h2>
+                <p>My academic and professional journey</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <h3>Education</h3>
+                    <!-- <div class="timeline-item">
+                        <span class="year">2024 - 2027</span>
+                        <h3>High School Diploma</h3>
+                        <h4>SMAN 1 Baleendah</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2014 - 2018</span>
+                        <h3>Bachelor's Degree</h3>
+                        <h4>University Name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
+                    </div> -->
+                    <div class="timeline-item">
+                        <span class="year">2024 - Present</span>
+                        <h3>High School Diploma</h3>
+                        <h4>SMAN 1 Baleendah</h4>
+                        <p>Disini saya belajar banyak hal tentang ilmu pengetahuan dan teknologi. Fokus pada pembelajaran yang lebih mendalam dan luas di sekolah.</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <h3>Experience</h3>
+                    <div class="timeline-item">
+                        <span class="year">2024 - Present</span>
+                        <h3>leader of the extracurricular division</h3>
+                        <h4>KARBIT</h4>
+                        <p>Saya menjadi pemimpin dari divisi pemrograman di ekstrakulikuler sekolah. Saya memimpin tim untuk membuat aplikasi dan merancang mikrokontoller.</p>
+                    <!-- </div>
+                    <div class="timeline-item">
+                        <span class="year">2018 - 2020</span>
+                        <h3>Web Developer</h3>
+                        <h4>Company Name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2016 - 2018</span>
+                        <h3>Junior Developer</h3>
+                        <h4>Company Name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>My Portfolio</h3>
+                    <p>Creating digital experiences that make an impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="src/pages/about.html">About</a></li>
+                        <li><a href="src/pages/portfolio.html">Portfolio</a></li>
+                        <!-- <li><a href="src/pages/blog.html">Blog</a></li> -->
+                        <li><a href="src/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hafizhnabhan@protonmail.com</li>
+                        <li><i class="fas fa-phone"></i> +62 821-2615-4790</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/hafizh-nabhan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/fissya" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/HafizhNabhan" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/hfizzhnr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hafizh. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

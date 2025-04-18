@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to the Contact page */
+        .contact-section {
+            padding: 150px 0 80px;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-info-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .contact-info-content p, .contact-info-content a {
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .contact-info-content a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contact-social {
+            margin-top: 30px;
+        }
+        
+        .contact-social h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .form-container {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-container h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-control label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control input, .form-control textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control input:focus, .form-control textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-control textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-control.error input, .form-control.error textarea {
+            border-color: #dc3545;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .success-message {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .success-message i {
+            font-size: 60px;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+        
+        .success-message h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .map-container {
+            margin-top: 80px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../../index.html">My Portfolio</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Me</h2>
+                <p>Get in touch with me for inquiries, collaborations, or just to say hello</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Feel free to reach out to me through any of the following methods. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Location</h4>
+                            <p>Bandung, Jawa Barat, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:hafizhnabhan@protonmain.com">hafizhnabhan@protonmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+6282126154790">+6282126154790</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/hafizh-nabhan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/fissya" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://x.com/HafizhNabhan" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/hfizzhnr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-control">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your Message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <!-- <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1617734782952!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>My Portfolio</h3>
+                    <p>Creating digital experiences that make an impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="src/pages/about.html">About</a></li>
+                        <li><a href="src/pages/portfolio.html">Portfolio</a></li>
+                        <!-- <li><a href="src/pages/blog.html">Blog</a></li> -->
+                        <li><a href="src/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hafizhnabhan@protonmail.com</li>
+                        <li><i class="fas fa-phone"></i> +62 821-2615-4790</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/hafizh-nabhan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/fissya" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/HafizhNabhan" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/hfizzhnr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hafizh. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
